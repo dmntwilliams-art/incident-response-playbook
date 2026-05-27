@@ -1,0 +1,109 @@
+Phase 6: Lessons Learned
+Goal: Understand what happened, why it happened, and how to prevent recurrence.
+6.1 Post-Incident Review Meeting
+Schedule within 5 business days of incident closure.
+Attendees:
+IR Lead (facilitator)
+Security Analysts involved in the response
+IT/Engineering (if systems were affected)
+Business unit owner
+CISO or Security Manager
+Legal (if regulatory impact)
+Agenda:
+1. Timeline walkthrough — what happened, when
+2. Root cause review — how the attacker got in
+3. Response review — what worked, what didn’t
+4. Detection review — why did it take X minutes/hours to detect?
+5. Action items — concrete improvements with owners and deadlines
+6.2 Incident Timeline Template
+Document a complete timeline of the incident:
+Timestamp (UTC)
+Event
+Source
+[datetime]
+Attacker first gained access (estimated)
+Log analysis
+[datetime] Malware executed / lateral movement began EDR telemetry
+[datetime] Alert triggered in SIEM SIEM
+[datetime] Analyst began investigation Ticket system
+[datetime] Incident declared, IR team activated IR Lead
+[datetime] Containment completed IR Lead
+[datetime] Eradication completed IR Lead
+[datetime] Systems restored IT Ops
+[datetime] Incident closed IR Lead
+6.3 Key Metrics to Capture
+Metric Value
+Mean Time to Detect (MTTD) X hours
+Mean Time to Respond (MTTR) X hours
+Mean Time to Contain (MTTC) X hours
+Total incident duration X hours
+Number of systems affected X
+Data exposed (if any) Yes / No
+Estimated business impact $X / X hrs downtime
+6.4 What Went Well
+Document positive findings to reinforce and replicate:
+Example: EDR detected malware within 3 minutes of execution
+Example: Runbook for ransomware response was followed accurately
+Example: Communication cadence with executives was effective
+6.5 What Needs Improvement
+Document gaps honestly — this is how the team gets better:
+Example: No memory forensics capability — analyst had to wait for external help
+Example: Alert fired but was not triaged for 4 hours due to overnight shift gap
+Example: Backup restoration process took 6 hours — target is 2 hours
+6.6 Action Items
+# Action Item
+Owner
+1
+Tune SIEM rule to reduce false positive rate
+Priority
+Due
+Date
+SOC Analyst
+2
+Enable MFA on all privileged accounts
+High
+[Date]
+IT Admin
+3 Conduct phishing awareness training
+Critical
+[Date]
+HR /
+Security
+4 Add memory forensics tool to IR toolkit
+Medium [Date]
+IR Lead
+5 Update IR playbook with new IOC
+categories
+High
+[Date]
+IR Lead
+Low
+[Date]
+6.7 Playbook Updates
+Based on this incident, update the following:
+Add new IOC types or attack patterns to detection rules
+Update escalation contacts if any were incorrect
+Revise any phase that caused delays or confusion
+Add new incident type checklist if a new scenario was encountered
+Update tool list if new capabilities were used or needed
+6.8 Report Distribution
+Audience
+Report Type
+Includes
+Executive /
+Board
+Executive Summary (1 page)
+Business impact, risk,
+remediation
+IR Team
+Full Technical Report
+Complete timeline, TTPs, IOCs
+Legal
+Privileged IR Report
+Liability-sensitive findings
+Regulators
+Breach Notification (if
+required)
+Legally required disclosures
+Completing a thorough lessons learned review is what separates reactive teams from
+mature, resilient security organizations.
